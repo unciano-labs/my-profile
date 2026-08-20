@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 18px;
+}
+
+::selection {
+  background: #e9a13b;
+  color: #26221a;
+}
+
+:focus-visible {
+  outline: 3px solid #e9a13b;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.js .reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.js .reveal.revealed {
+  opacity: 1;
+  transform: none;
+}
+.js .reveal.d1 {
+  transition-delay: 0.1s;
+}
+.js .reveal.d2 {
+  transition-delay: 0.2s;
+}
+
+.skill-fill {
+  width: 0;
+  transition: width 0.9s ease-out;
+}
+
+
+#toTop {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+#toTop.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .js .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .skill-fill {
+    transition: none !important;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0.3;
+      transform: translateY(5px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out forwards;
+  }
+}

@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freddie Unciano Jr — Full-Stack Developer</title>
+<meta name="description" content="Freddie Unciano Jr is a full-stack developer from Antipolo City with 8+ years building and maintaining reliable web applications for teams in the Philippines, US and Europe.">
+<script>document.documentElement.className += ' js';</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Caveat:wght@500;600&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,500&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        cream: '#FAF6EF',
+        paper: '#FFFFFF',
+        sand:  '#F5ECDB',
+        sage:  '#ECF1E8',
+        ink:   '#26221A',
+        'ink-soft': '#4C4636',
+        pine:  { DEFAULT:'#1E5A3E', dark:'#16452F', deep:'#123227', night:'#0C241B' },
+        amber: { DEFAULT:'#E9A13B', soft:'#F4D9A8' },
+        brick: '#B3261E'
+      },
+      fontFamily: {
+        display: ['Fraunces','Georgia','serif'],
+        body:    ['"Atkinson Hyperlegible"','Verdana','sans-serif'],
+        hand:    ['Caveat','cursive']
+      },
+      maxWidth: { 'content': '72rem' }
+    }
+  }
+}
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-size: 18px; }
+  ::selection { background: #E9A13B; color: #26221A; }
+  :focus-visible { outline: 3px solid #E9A13B; outline-offset: 3px; border-radius: 4px; }
+
+  .js .reveal { opacity: 0; transform: translateY(22px); transition: opacity .5s ease-out, transform .5s ease-out; }
+  .js .reveal.revealed { opacity: 1; transform: none; }
+  .js .reveal.d1 { transition-delay: .1s; }
+  .js .reveal.d2 { transition-delay: .2s; }
+
+  .skill-fill { width: 0; transition: width .9s ease-out; }
+
+  #siteHeader { transition: box-shadow .3s ease; }
+  #siteHeader.scrolled { box-shadow: 0 2px 0 rgba(38,34,26,.06), 0 10px 28px rgba(38,34,26,.10); }
+
+  #toTop { opacity: 0; pointer-events: none; transition: opacity .3s ease; }
+  #toTop.show { opacity: 1; pointer-events: auto; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .js .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+    .skill-fill { transition: none !important; }
+    * { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  }
+</style>
+</head>
+
+<body id="top" class="bg-cream text-ink font-body antialiased leading-relaxed">
+
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-[100] focus:bg-amber focus:text-ink focus:font-bold focus:px-5 focus:py-3 focus:rounded-lg">Skip to main content</a>
+
+<!-- ============================================================ HEADER -->
+<header id="siteHeader" class="sticky top-0 z-50 bg-cream border-b-2 border-ink/10">
+  <div class="max-w-content mx-auto px-5 sm:px-8">
+    <div class="flex items-center justify-between h-[76px]">
+      <a href="#top" class="flex items-baseline gap-1 font-display font-black text-xl sm:text-2xl text-ink hover:text-pine">
+        Freddie<span class="text-pine">·</span>Unciano
+        <span class="hidden sm:inline font-hand font-medium text-pine text-lg">/ portfolio</span>
+      </a>
+
+      <nav aria-label="Main" class="hidden lg:flex items-center gap-7">
+        <a class="font-bold text-[17px] text-ink-soft hover:text-pine" href="#about">About</a>
+        <a class="font-bold text-[17px] text-ink-soft hover:text-pine" href="#experience">Experience</a>
+        <a class="font-bold text-[17px] text-ink-soft hover:text-pine" href="#projects">Projects</a>
+        <a class="font-bold text-[17px] text-ink-soft hover:text-pine" href="#lab">The Lab</a>
+        <a class="font-bold text-[17px] text-ink-soft hover:text-pine" href="#skills">Skills</a>
+        <a class="font-bold text-[17px] text-ink-soft hover:text-pine" href="#gallery">Off-Screen</a>
+        <span class="text-[15px] font-bold text-ink-soft/80 tabular-nums" aria-label="Current time in the Philippines"><span class="ph-clock">--:--</span></span>
+        <a href="#contact" class="inline-flex items-center min-h-[48px] px-6 rounded-lg bg-pine text-cream font-bold text-[17px] hover:bg-pine-dark">Hire Me</a>
+      </nav>
+
+      <div class="flex items-center gap-4 lg:hidden">
+        <span class="text-[15px] font-bold text-ink-soft tabular-nums"><span class="ph-clock">--:--</span></span>
+        <button id="menuBtn" aria-expanded="false" aria-controls="mobileMenu"
+                class="inline-flex items-center justify-center min-h-[48px] min-w-[48px] rounded-lg border-2 border-ink/20 font-bold text-lg">
+          <span id="menuIcon" aria-hidden="true">☰</span><span class="sr-only">Menu</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <nav id="mobileMenu" aria-label="Mobile" class="hidden lg:hidden border-t-2 border-ink/10 bg-cream px-5 pb-6 pt-2">
+    <a class="block py-3 font-bold text-lg border-b border-ink/10" href="#about">About</a>
+    <a class="block py-3 font-bold text-lg border-b border-ink/10" href="#experience">Experience</a>
+    <a class="block py-3 font-bold text-lg border-b border-ink/10" href="#projects">Projects</a>
+    <a class="block py-3 font-bold text-lg border-b border-ink/10" href="#lab">The Lab</a>
+    <a class="block py-3 font-bold text-lg border-b border-ink/10" href="#skills">Skills</a>
+    <a class="block py-3 font-bold text-lg border-b border-ink/10" href="#gallery">Off-Screen</a>
+    <a class="block py-3 font-bold text-lg border-b border-ink/10" href="#contact">Contact</a>
+    <a href="#contact" class="mt-4 inline-flex items-center justify-center min-h-[52px] px-8 rounded-lg bg-pine text-cream font-bold text-lg w-full">Hire Me</a>
+  </nav>
+</header>
+
+<main id="main">
+
+<!-- ============================================================ HERO -->
+<section aria-label="Introduction" class="relative bg-pine-deep text-cream overflow-hidden">
+  <img src="https://picsum.photos/seed/calm-workspace-morning/1600/900" alt="" aria-hidden="true"
+       class="absolute inset-0 h-full w-full object-cover brightness-[.45]" fetchpriority="high">
+  <div class="absolute inset-0 bg-pine-deep/55" aria-hidden="true"></div>
+
+  <div class="relative max-w-content mx-auto px-5 sm:px-8 pt-20 pb-24 lg:pt-28 lg:pb-32 grid lg:grid-cols-[1.15fr_.85fr] gap-14 items-center">
+    <div>
+      <p class="reveal inline-block bg-amber text-ink font-bold px-4 py-1.5 rounded-md shadow-md rotate-[-2deg] text-[17px]">● Open to new work</p>
+
+      <h1 class="reveal d1 mt-6 font-display font-black text-5xl sm:text-6xl lg:text-7xl leading-[1.05]">
+        Freddie<br>Unciano&nbsp;Jr.
+        <svg class="mt-2 w-56 sm:w-72" viewBox="0 0 260 14" fill="none" aria-hidden="true">
+          <path d="M4 9 C 50 3, 105 12, 150 7 S 235 4, 256 8" stroke="#E9A13B" stroke-width="5" stroke-linecap="round"/>
+        </svg>
+      </h1>
+
+      <p class="reveal d1 mt-4 font-display font-medium text-2xl sm:text-3xl text-amber-soft">Full-stack developer. Calm, careful, shipped.</p>
+
+      <p class="reveal d2 mt-6 max-w-xl text-xl leading-8 text-cream/95">
+        For more than eight years I've built and looked after web applications for teams
+        in the Philippines, the US and Europe. I test carefully, fix what's slow, and make
+        sure things keep working long after launch.
+      </p>
+
+      <div class="reveal d2 mt-9 flex flex-wrap items-center gap-4">
+        <a href="mailto:itsmefreddieunciano@gmail.com"
+           class="inline-flex items-center justify-center min-h-[54px] px-8 rounded-lg bg-amber text-ink font-bold text-lg shadow-md hover:bg-amber-soft">Email Me</a>
+        <a href="#projects"
+           class="inline-flex items-center justify-center min-h-[54px] px-8 rounded-lg border-2 border-cream/80 text-cream font-bold text-lg hover:bg-cream/10">See My Work ↓</a>
+      </div>
+      <p class="mt-4 font-hand text-2xl text-amber-soft rotate-[-1deg] inline-block">I usually reply within 24 hours ↗</p>
+
+      <dl class="mt-12 grid grid-cols-3 gap-4 max-w-lg">
+        <div class="border-l-4 border-amber pl-4">
+          <dt class="text-[16px] font-bold text-cream/85">years building</dt>
+          <dd class="font-display font-black text-3xl sm:text-4xl">8+</dd>
+        </div>
+        <div class="border-l-4 border-amber pl-4">
+          <dt class="text-[16px] font-bold text-cream/85">companies</dt>
+          <dd class="font-display font-black text-3xl sm:text-4xl">3</dd>
+        </div>
+        <div class="border-l-4 border-amber pl-4">
+          <dt class="text-[16px] font-bold text-cream/85">teams served</dt>
+          <dd class="font-display font-black text-2xl sm:text-3xl leading-tight pt-1">PH · US · EU</dd>
+        </div>
+      </dl>
+    </div>
+
+    <figure class="reveal d2 relative max-w-xs mx-auto lg:max-w-sm rotate-2">
+      <span aria-hidden="true" class="absolute -top-3 left-10 w-24 h-6 bg-amber-soft/80 rotate-[-5deg] shadow-sm z-10"></span>
+      <span aria-hidden="true" class="absolute -top-3 right-10 w-20 h-6 bg-amber-soft/80 rotate-[4deg] shadow-sm z-10"></span>
+      <div class="bg-cream p-3 pb-5 shadow-2xl">
+        <img src="https://picsum.photos/seed/freddie-portrait/640/720" width="640" height="720"
+             alt="Portrait of Freddie Unciano Jr." class="w-full h-auto">
+        <figcaption class="mt-3 text-center font-hand text-2xl text-ink">Freddie, somewhere in Antipolo</figcaption>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- ============================================================ ABOUT -->
+<section id="about" aria-labelledby="about-title" class="bg-paper py-24">
+  <div class="max-w-content mx-auto px-5 sm:px-8">
+    <p class="reveal font-bold uppercase tracking-[.18em] text-pine text-[16px]">01 · About</p>
+    <h2 id="about-title" class="reveal mt-3 font-display font-black text-4xl sm:text-5xl max-w-2xl leading-tight">The human behind the commits.</h2>
+    <p class="mt-2 font-hand text-3xl text-pine rotate-[-1deg] inline-block">the boring parts matter most ↷</p>
+
+    <div class="mt-12 grid lg:grid-cols-[1.1fr_.9fr] gap-14 items-start">
+      <div class="space-y-6 text-[19px] leading-8 max-w-2xl">
+        <p class="reveal">I'm a full-stack developer from Antipolo City. For over eight years I've worked on property management systems, international software products and large company tools.</p>
+        <p class="reveal d1">My work is mostly the part of software that people feel but never see: keeping systems reliable, making sure different programs talk to each other safely, and testing everything before it goes live.</p>
+        <p class="reveal d1">After hours I build Shopify themes, generate images and short videos with AI, and keep a small home server running for the whole family.</p>
+        <p class="reveal d2 font-bold text-pine">I like technology that survives contact with real data.</p>
+      </div>
+
+      <div class="reveal d1 bg-sand border-2 border-ink/10 rounded-lg p-8 rotate-[-0.6deg] shadow-md">
+        <h3 class="font-display font-bold text-2xl">Quick facts</h3>
+        <dl class="mt-5 space-y-4">
+          <div class="flex items-start gap-4">
+            <span aria-hidden="true" class="text-2xl">🏠</span>
+            <div><dt class="font-bold text-[16px] uppercase tracking-wide text-ink-soft">Based in</dt>
+            <dd class="text-lg">Antipolo City, Philippines</dd></div>
+          </div>
+          <div class="flex items-start gap-4">
+            <span aria-hidden="true" class="text-2xl">🎓</span>
+            <div><dt class="font-bold text-[16px] uppercase tracking-wide text-ink-soft">Degree</dt>
+            <dd class="text-lg">BS Information Technology</dd></div>
+          </div>
+          <div class="flex items-start gap-4">
+            <span aria-hidden="true" class="text-2xl">🗣️</span>
+            <div><dt class="font-bold text-[16px] uppercase tracking-wide text-ink-soft">Languages</dt>
+            <dd class="text-lg">English · Filipino</dd></div>
+          </div>
+          <div class="flex items-start gap-4">
+            <span aria-hidden="true" class="text-2xl">🌏</span>
+            <div><dt class="font-bold text-[16px] uppercase tracking-wide text-ink-soft">Working remotely since</dt>
+            <dd class="text-lg">2019, with US and Europe teams</dd></div>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <h3 class="reveal mt-20 font-display font-bold text-3xl">How I work</h3>
+    <ul class="mt-8 grid sm:grid-cols-2 gap-6 max-w-4xl">
+      <li class="reveal flex gap-4 bg-cream border-2 border-ink/10 rounded-lg p-6">
+        <span aria-hidden="true" class="font-display font-black text-3xl text-pine">1</span>
+        <p class="text-lg leading-7">Find the slowest or weakest spot first — then fix that before anything else.</p>
+      </li>
+      <li class="reveal d1 flex gap-4 bg-cream border-2 border-ink/10 rounded-lg p-6 sm:translate-y-2">
+        <span aria-hidden="true" class="font-display font-black text-3xl text-pine">2</span>
+        <p class="text-lg leading-7">Error-free is a daily habit, not a last-minute scramble before a deadline.</p>
+      </li>
+      <li class="reveal d1 flex gap-4 bg-cream border-2 border-ink/10 rounded-lg p-6">
+        <span aria-hidden="true" class="font-display font-black text-3xl text-pine">3</span>
+        <p class="text-lg leading-7">I own a feature from first idea to release — and I stay around to support it.</p>
+      </li>
+      <li class="reveal d2 flex gap-4 bg-pine text-cream border-2 border-pine rounded-lg p-6 sm:translate-y-2">
+        <span aria-hidden="true" class="font-display font-black text-3xl text-amber">4</span>
+        <p class="text-lg leading-7">React today, Laravel yesterday, AI tomorrow — the tools change, the care doesn't.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================ EXPERIENCE (polished timeline) -->
+<section id="experience" aria-labelledby="exp-title" class="bg-sage py-28">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8">
+    <div class="flex flex-wrap items-end justify-between gap-4">
+      <div>
+        <p class="reveal font-bold uppercase tracking-[.18em] text-pine text-[16px]">02 · Experience</p>
+        <h2 id="exp-title" class="reveal mt-3 font-display font-black text-4xl sm:text-5xl">Where I've worked.</h2>
+      </div>
+      <p class="reveal d1 font-hand text-3xl text-pine rotate-[-1.5deg]">three teams, one habit: leave it better ✎</p>
+    </div>
+    <p class="reveal d1 mt-4 text-xl text-ink-soft max-w-xl">2018 to today — two remote, one local. Each stop taught me something I still use every week.</p>
+
+    <div class="relative mt-20">
+      <!-- center spine (desktop) -->
+      <span aria-hidden="true" class="hidden md:block absolute left-1/2 -translate-x-1/2 top-1 bottom-1 w-[3px] bg-pine/25 rounded-full"></span>
+
+      <ol class="space-y-16 md:space-y-24">
+
+        <!-- 2026 · Palace Unity -->
+        <li class="relative">
+          <span aria-hidden="true" class="hidden md:block absolute left-1/2 -translate-x-1/2 top-1 w-6 h-6 rounded-full bg-amber border-[3px] border-ink z-10"></span>
+          <div class="md:grid md:grid-cols-2 md:gap-20 items-start">
+            <div class="reveal md:text-right md:pt-1">
+              <p aria-hidden="true" class="font-display font-black text-7xl text-pine/20 leading-none">2026</p>
+              <p class="mt-3 font-bold text-[16px] uppercase tracking-wide text-ink-soft">Jan 2026 — present · Cyprus · remote</p>
+              <p class="mt-2 font-hand text-2xl text-pine inline-block rotate-[-1deg]">the current chapter ✎</p>
+            </div>
+            <article class="reveal d1 relative mt-6 md:mt-0 bg-paper border-2 border-ink/10 rounded-lg p-7 sm:p-9 shadow-md">
+              <span class="absolute -top-4 left-8 bg-pine text-cream font-bold text-[15px] px-4 py-1.5 rounded-md rotate-[-2deg] shadow-md">CURRENT</span>
+              <h3 class="font-display font-black text-3xl">Palace Unity</h3>
+              <p class="mt-1 font-bold text-pine text-xl">Full-Stack Developer &amp; Chat Support</p>
+              <ul class="mt-5 space-y-3 text-lg leading-7">
+                <li class="flex gap-3"><span aria-hidden="true" class="text-pine font-black">→</span>Rebuilt the main web apps with React, Next.js and Tailwind — pages now open about 35% faster.</li>
+                <li class="flex gap-3"><span aria-hidden="true" class="text-pine font-black">→</span>Tested our internal property-management tools; my slow-spot reports became the team's fix list.</li>
+                <li class="flex gap-3"><span aria-hidden="true" class="text-pine font-black">→</span>Added AI features only after checking the AI's answers across many real situations.</li>
+                <li class="flex gap-3"><span aria-hidden="true" class="text-pine font-black">→</span>Helped guests and owners of holiday rentals with technical questions, start to finish.</li>
+              </ul>
+              <p class="mt-6 border-l-4 border-amber pl-4 font-hand text-2xl text-ink-soft">What stuck with me: speed is a feature users feel.</p>
+              <p class="mt-5 flex flex-wrap gap-2">
+                <span class="bg-sage border border-ink/10 rounded-full px-4 py-1.5 text-[16px] font-bold">React.js</span>
+                <span class="bg-sage border border-ink/10 rounded-full px-4 py-1.5 text-[16px] font-bold">Next.js</span>
+                <span class="bg-sage border border-ink/10 rounded-full px-4 py-1.5 text-[16px] font-bold">Tailwind</span>
+                <span class="bg-sage border border-ink/10 rounded-full px-4 py-1.5 text-[16px] font-bold">AI integration</span>
+              </p>
+            </article>
+          </div>
+        </li>
+
+        <!-- 2019 · PeachWiz (mirrored) -->
+        <li class="relative">
+          <span aria-hidden="true" class="hidden md:block absolute left-1/2 -translate-x-1/2 top-1 w-6 h-6 rounded-full bg-paper border-[3px] border-pine z-10"></span>
+          <div class="md:grid md:grid-cols-2 md:gap-20 items-start">
+            <div class="reveal md:order-2 md:pt-1">
+              <p aria-hidden="true" class="font-display font-black text-7xl text-pine/20 leading-none">2019</p>
+              <p class="mt-3 font-bold text-[16px] uppercase tracking-wide text-ink-soft">Oct 2019 — Oct 2025 · US · remote</p>
+              <p class="mt-2 font-hand text-2xl text-pine inline-block rotate-[1deg]">six steady years ✎</p>
+            </div>
+            <article class="reveal d1 relative mt-6 md:mt-0 md:order-1 bg-paper border-2 border-ink/10 rounded-lg p-7 sm:p-9 shadow-md">
+              <h3 class="font-display font-black text-3xl">PeachWiz Inc.</h3>
+              <p class="mt-1 font-bold text-pine text-xl">Full-Stack Developer</p>
+              <ul class="mt-5 space-y-3 text-lg leading-7">
+                <li class="flex gap-3"><span aria-hidden="true" class="text-pine font-black">→</span>Built and maintained complete web applications for six years — including all the testing.</li>
+                <li class="flex gap-3"><span aria-hidden="true" class="text-pine font-black">→</span>Owned the connections to outside services: correct data, reliable endpoints, no surprises.</li>
+                <li class="flex gap-3"><span aria-hidden="true" class="text-pine font-black">→</span>Prepared AI features carefully and checked their results before release.</li>
+                <li class="flex gap-3"><span aria-hidden="true" class="text-pine font-black">→</span>Worked across the whole build process with Laravel, PHP, jQuery and MySQL.</li>
+              </ul>
+              <p class="mt-6 border-l-4 border-amber pl-4 font-hand text-2xl text-ink-soft">What stuck with me: reliable beats clever, every time.</p>
+              <p class="mt-5 flex flex-wrap gap-2">
+                <span class="bg-sage border border-ink/10 rounded-full px-4 py-1.5 text-[16px] font-bold">Laravel</span>
+                <span class="bg-sage border border-ink/10 rounded-full px-4 py-1.5 text-[16px] font-bold">PHP</span>
+                <span class="bg-sage border border-ink/10 rounded-full px-4 py-1.5 text-[16px] font-bold">MySQL</span>
+                <span class="bg-sage border border-ink/10 rounded-full px-4 py-1.5 text-[16px] font-bold">API development</span>
+              </p>
+            </article>
+          </div>
+        </li>
+
+        <!-- 2018 · AcaciaSoft -->
+        <li class="relative">
+          <span aria-hidden="true" class="hidden md:block absolute left-1/2 -translate-x-1/2 top-1 w-6 h-6 rounded-full bg-paper border-[3px] border-pine z-10"></span>
+          <div class="md:grid md:grid-cols-2 md:gap-20 items-start">
+            <div class="reveal md:text-right md:pt-1">
+              <p aria-hidden="true" class="font-display font-black text-7xl text-pine/20 leading-none">2018</p>
+              <p class="mt-3 font-bold text-[16px] uppercase tracking-wide text-ink-soft">Jan 2018 — Oct 2019 · Philippines</p>
+              <p class="mt-2 font-hand text-2xl text-pine inline-block rotate-[-1deg]">where it all started ✎</p>
+            </div>
+            <article class="reveal d1 relative mt-6 md:mt-0 bg-paper border-2 border-ink/10 rounded-lg p-7 sm:p-9 shadow-md">
+              <h3 class="font-display font-black text-3xl">AcaciaSoft</h3>
+              <p class="mt-1 font-bold text-pine text-xl">Full-Stack Developer</p>
+              <ul class="mt-5 space-y-3 text-lg leading-7">
+                <li class="flex gap-3"><span aria-hidden="true" class="text-pine font-black">→</span>Built and released systems with a focus on clean, error-free code.</li>
+                <li class="flex gap-3"><span aria-hidden="true" class="text-pine font-black">→</span>Found and fixed serious problems before anything reached customers.</li>
+                <li class="flex gap-3"><span aria-hidden="true" class="text-pine font-black">→</span>Worked on both the front and the back of applications — which taught me to write thorough tests.</li>
+              </ul>
+              <p class="mt-6 border-l-4 border-amber pl-4 font-hand text-2xl text-ink-soft">What stuck with me: test like the release is yours — because it is.</p>
+              <p class="mt-5 flex flex-wrap gap-2">
+                <span class="bg-sage border border-ink/10 rounded-full px-4 py-1.5 text-[16px] font-bold">PHP</span>
+                <span class="bg-sage border border-ink/10 rounded-full px-4 py-1.5 text-[16px] font-bold">Deployment</span>
+                <span class="bg-sage border border-ink/10 rounded-full px-4 py-1.5 text-[16px] font-bold">Debugging</span>
+              </p>
+            </article>
+          </div>
+        </li>
+      </ol>
+
+      <p class="mt-16 text-center font-hand text-3xl text-pine rotate-[-1deg]">…and counting.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ PROJECTS -->
+<section id="projects" aria-labelledby="proj-title" class="bg-cream py-24 lg:pb-32">
+  <div class="max-w-content mx-auto px-5 sm:px-8">
+    <p class="reveal font-bold uppercase tracking-[.18em] text-pine text-[16px]">03 · Projects</p>
+    <h2 id="proj-title" class="reveal mt-3 font-display font-black text-4xl sm:text-5xl">Selected work.</h2>
+    <p class="reveal d1 mt-4 text-xl text-ink-soft max-w-2xl">
+      A few things I've built and looked after. Happy to walk through the numbers behind any of
+      these on a call <span class="font-hand text-2xl text-pine">— just ask!</span>
+    </p>
+
+    <article class="mt-16 grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+      <img src="https://picsum.photos/seed/harbor-dashboard/900/560" width="900" height="560" loading="lazy"
+           alt="Dashboard screen from the Harbor property management suite"
+           class="reveal w-full h-auto rounded-lg border-[6px] border-paper shadow-xl rotate-[.8deg]">
+      <div class="reveal d1">
+        <p class="font-bold text-[16px] uppercase tracking-wide text-ink-soft">2026 · Palace Unity · lead developer</p>
+        <h3 class="mt-2 font-display font-black text-3xl">Harbor — property management suite</h3>
+        <p class="mt-4 text-lg leading-8">An internal tool for managing holiday rentals in Cyprus and the US: listings, bookings and owner payments. I made it open about 35% faster by splitting the code carefully and speeding up database requests.</p>
+        <ul class="mt-5 space-y-2 text-lg">
+          <li class="flex gap-3"><span aria-hidden="true" class="text-pine font-black">✓</span>Support tooling cut average reply time in half</li>
+          <li class="flex gap-3"><span aria-hidden="true" class="text-pine font-black">✓</span>Twelve months of updates without taking the site down</li>
+        </ul>
+        <p class="mt-4 flex flex-wrap gap-2">
+          <span class="bg-paper border border-ink/10 rounded-full px-4 py-1.5 text-[16px] font-bold">Next.js</span>
+          <span class="bg-paper border border-ink/10 rounded-full px-4 py-1.5 text-[16px] font-bold">TypeScript</span>
+          <span class="bg-paper border border-ink/10 rounded-full px-4 py-1.5 text-[16px] font-bold">Tailwind</span>
+        </p>
+        <div class="mt-7 flex flex-wrap items-center gap-5">
+          <a href="#contact" class="inline-flex items-center justify-center min-h-[52px] px-7 rounded-lg bg-pine text-cream font-bold text-lg hover:bg-pine-dark">View Case Notes</a>
+          <a href="#" class="font-bold text-lg text-pine underline decoration-2 underline-offset-4 hover:text-pine-dark">Code ↗</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="mt-24 grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+      <div class="reveal d1 lg:order-2">
+        <img src="https://picsum.photos/seed/peachwiz-console/900/560" width="900" height="560" loading="lazy"
+             alt="Monitoring console from the PeachWiz project"
+             class="w-full h-auto rounded-lg border-[6px] border-paper shadow-xl rotate-[-.8deg]">
+      </div>
+      <div class="reveal bg-sage border-2 border-ink/10 rounded-lg p-8 lg:order-1">
+        <p class="font-bold text-[16px] uppercase tracking-wide text-ink-soft">2023 · PeachWiz Inc. · system connections</p>
+        <h3 class="mt-2 font-display font-black text-3xl">PeachWiz monitoring console</h3>
+        <p class="mt-4 text-lg leading-8">A dashboard for developers that watches the health of connections to outside services. Its warnings caught breaking changes before customers ever noticed them.</p>
+        <ul class="mt-5 space-y-2 text-lg">
+          <li class="flex gap-3"><span aria-hidden="true" class="text-pine font-black">✓</span>99.9% monitoring uptime for two years</li>
+          <li class="flex gap-3"><span aria-hidden="true" class="text-pine font-black">✓</span>Automatic nightly checks across 40+ connections</li>
+        </ul>
+        <p class="mt-4 flex flex-wrap gap-2">
+          <span class="bg-paper border border-ink/10 rounded-full px-4 py-1.5 text-[16px] font-bold">Laravel</span>
+          <span class="bg-paper border border-ink/10 rounded-full px-4 py-1.5 text-[16px] font-bold">MySQL</span>
+          <span class="bg-paper border border-ink/10 rounded-full px-4 py-1.5 text-[16px] font-bold">jQuery</span>
+        </p>
+        <div class="mt-7 flex flex-wrap items-center gap-5">
+          <a href="#contact" class="inline-flex items-center justify-center min-h-[52px] px-7 rounded-lg bg-pine text-cream font-bold text-lg hover:bg-pine-dark">View Case Notes</a>
+          <a href="#" class="font-bold text-lg text-pine underline decoration-2 underline-offset-4 hover:text-pine-dark">Code ↗</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="mt-24 grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+      <img src="https://picsum.photos/seed/deskoracle-chat/900/560" width="900" height="560" loading="lazy"
+           alt="Chat screen from the DeskOracle offline assistant"
+           class="reveal w-full h-auto rounded-lg border-[6px] border-paper shadow-xl rotate-[.6deg]">
+      <div class="reveal d1">
+        <p class="font-bold text-[16px] uppercase tracking-wide text-ink-soft">Lab · 2025 → now · private AI</p>
+        <h3 class="mt-2 font-display font-black text-3xl">DeskOracle — offline AI assistant</h3>
+        <p class="mt-4 text-lg leading-8">A private helper that answers questions from a 300-page operations handbook. It runs entirely on one laptop with no internet connection — nothing ever leaves the machine.</p>
+        <ul class="mt-5 space-y-2 text-lg">
+          <li class="flex gap-3"><span aria-hidden="true" class="text-pine font-black">✓</span>Runs fully offline on a laptop with 16GB of memory</li>
+          <li class="flex gap-3"><span aria-hidden="true" class="text-pine font-black">✓</span>Using a compact version of the model: about 22 answers per second, quality kept</li>
+        </ul>
+        <p class="mt-4 flex flex-wrap gap-2">
+          <span class="bg-paper border border-ink/10 rounded-full px-4 py-1.5 text-[16px] font-bold">Ollama</span>
+          <span class="bg-paper border border-ink/10 rounded-full px-4 py-1.5 text-[16px] font-bold">llama.cpp</span>
+          <span class="bg-paper border border-ink/10 rounded-full px-4 py-1.5 text-[16px] font-bold">Python</span>
+        </p>
+        <div class="mt-7 flex flex-wrap items-center gap-5">
+          <a href="#lab" class="inline-flex items-center justify-center min-h-[52px] px-7 rounded-lg bg-pine text-cream font-bold text-lg hover:bg-pine-dark">Read Lab Notes ↓</a>
+          <a href="#" class="font-bold text-lg text-pine underline decoration-2 underline-offset-4 hover:text-pine-dark">Code ↗</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="mt-24 grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+      <div class="reveal d1 lg:order-2">
+        <img src="https://picsum.photos/seed/frameforge-board/900/560" width="900" height="560" loading="lazy"
+             alt="Storyboard board from the FrameForge video lab"
+             class="w-full h-auto rounded-lg border-[6px] border-paper shadow-xl rotate-[-.6deg]">
+      </div>
+      <div class="reveal lg:order-1">
+        <p class="font-bold text-[16px] uppercase tracking-wide text-ink-soft">Lab · 2026 · AI video</p>
+        <h3 class="mt-2 font-display font-black text-3xl">FrameForge — AI video storyboard lab</h3>
+        <p class="mt-4 text-lg leading-8">A small pipeline that turns product notes into five-second demo videos. A library of tested prompts keeps the characters and the style consistent between takes.</p>
+        <ul class="mt-5 space-y-2 text-lg">
+          <li class="flex gap-3"><span aria-hidden="true" class="text-pine font-black">✓</span>More than 40 tested prompt patterns, versioned like code</li>
+          <li class="flex gap-3"><span aria-hidden="true" class="text-pine font-black">✓</span>These short loops are now used in internal pitches</li>
+        </ul>
+        <p class="mt-4 flex flex-wrap gap-2">
+          <span class="bg-paper border border-ink/10 rounded-full px-4 py-1.5 text-[16px] font-bold">Text-to-video</span>
+          <span class="bg-paper border border-ink/10 rounded-full px-4 py-1.5 text-[16px] font-bold">Image-to-video</span>
+          <span class="bg-paper border border-ink/10 rounded-full px-4 py-1.5 text-[16px] font-bold">Prompt design</span>
+        </p>
+        <div class="mt-7 flex flex-wrap items-center gap-5">
+          <a href="#lab" class="inline-flex items-center justify-center min-h-[52px] px-7 rounded-lg bg-pine text-cream font-bold text-lg hover:bg-pine-dark">Read Lab Notes ↓</a>
+          <a href="#" class="font-bold text-lg text-pine underline decoration-2 underline-offset-4 hover:text-pine-dark">Clips ↗</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============================================================ THE LAB (polished, 3 experiments) -->
+<section id="lab" aria-labelledby="lab-title" class="bg-paper py-24">
+  <div class="max-w-content mx-auto px-5 sm:px-8">
+    <div class="flex flex-wrap items-end justify-between gap-4">
+      <div>
+        <p class="reveal font-bold uppercase tracking-[.18em] text-pine text-[16px]">04 · The Lab</p>
+        <h2 id="lab-title" class="reveal mt-3 font-display font-black text-4xl sm:text-5xl">After-hours experiments.</h2>
+      </div>
+      <p class="reveal d1 font-hand text-3xl text-pine rotate-[-1.5deg]">for fun, honestly ✎</p>
+    </div>
+    <p class="reveal d1 mt-4 text-xl text-ink-soft max-w-2xl">Three ongoing hobbies that keep me curious. Dated notes, honest results — no hype.</p>
+
+    <div class="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+
+      <!-- Shopify themes -->
+      <article class="reveal bg-cream border-2 border-ink/10 rounded-lg overflow-hidden shadow-md lg:rotate-[-.6deg]">
+        <div class="relative">
+          <!-- Swap this src for the generated "Shopify desk" photo if you prefer -->
+          <img src="https://picsum.photos/seed/shopify-theme-desk/700/440" width="700" height="440" loading="lazy"
+               alt="A laptop showing an online store theme Freddie built, beside folded fabric samples"
+               class="w-full h-52 object-cover">
+          <span class="absolute top-4 -left-2 bg-pine text-cream font-bold text-[15px] px-3 py-1 rounded-md rotate-[-3deg] shadow-md">ACTIVE</span>
+        </div>
+        <div class="p-7">
+          <h3 class="font-display font-black text-2xl">🛍️ Shopify theme building</h3>
+          <p class="mt-3 text-lg leading-8">Designing and building custom storefront themes — sections that store owners can rearrange themselves, fast pages, and checkouts that don't confuse anyone.</p>
+          <ul class="mt-5 space-y-3 text-[17px] leading-7 border-l-4 border-amber pl-5">
+            <li><span class="font-bold text-pine">Feb 2026</span> — first theme passed Shopify's own checks with zero warnings.</li>
+            <li><span class="font-bold text-pine">Jan 2026</span> — rebuilt a product page; it now opens in under a second on a phone.</li>
+            <li><span class="font-bold text-pine">Dec 2025</span> — started studying Liquid and theme sections.</li>
+          </ul>
+          <p class="mt-6 flex flex-wrap gap-2">
+            <span class="bg-paper border border-ink/10 rounded-full px-4 py-1.5 text-[16px] font-bold">Liquid</span>
+            <span class="bg-paper border border-ink/10 rounded-full px-4 py-1.5 text-[16px] font-bold">Theme sections</span>
+            <span class="bg-paper border border-ink/10 rounded-full px-4 py-1.5 text-[16px] font-bold">Storefront design</span>
+            <span class="bg-paper border border-ink/10 rounded-full px-4 py-1.5 text-[16px] font-bold">Speed tuning</span>
+          </p>
+        </div>
+      </article>
+
+      <!-- AI image & video -->
+      <article class="reveal d1 bg-sand border-2 border-ink/10 rounded-lg overflow-hidden shadow-md lg:mt-10">
+        <div class="relative">
+          <img src="https://picsum.photos/seed/ai-video-stills/700/440" width="700" height="440" loading="lazy"
+               alt="A wall of printed video stills and storyboards from AI generation experiments"
+               class="w-full h-52 object-cover">
+          <span class="absolute top-4 -left-2 bg-amber text-ink font-bold text-[15px] px-3 py-1 rounded-md rotate-[2deg] shadow-md">EXPLORING</span>
+        </div>
+        <div class="p-7">
+          <h3 class="font-display font-black text-2xl">🎬 AI image &amp; video generation</h3>
+          <p class="mt-3 text-lg leading-8">Turning plain written notes into product pictures and five-second demo clips — with careful prompt writing so characters and style stay consistent between takes.</p>
+          <ul class="mt-5 space-y-3 text-[17px] leading-7 border-l-4 border-pine pl-5">
+            <li><span class="font-bold text-pine">Feb 2026</span> — a five-second product loop made from plain notes was used in an internal pitch.</li>
+            <li><span class="font-bold text-pine">Jan 2026</span> — prompt library, version 2: the same character across 40+ patterns.</li>
+            <li><span class="font-bold text-pine">Dec 2025</span> — first image-to-video tests; kept the best ten seconds out of a hundred.</li>
+          </ul>
+          <p class="mt-6 flex flex-wrap gap-2">
+            <span class="bg-paper border border-ink/10 rounded-full px-4 py-1.5 text-[16px] font-bold">Text-to-image</span>
+            <span class="bg-paper border border-ink/10 rounded-full px-4 py-1.5 text-[16px] font-bold">Text-to-video</span>
+            <span class="bg-paper border border-ink/10 rounded-full px-4 py-1.5 text-[16px] font-bold">Image-to-video</span>
+            <span class="bg-paper border border-ink/10 rounded-full px-4 py-1.5 text-[16px] font-bold">Prompt design</span>
+          </p>
+        </div>
+      </article>
+
+      <!-- Home server -->
+      <article class="reveal d2 bg-cream border-2 border-ink/10 rounded-lg overflow-hidden shadow-md md:col-span-2 lg:col-span-1 lg:rotate-[.6deg]">
+        <div class="relative">
+          <!-- Swap this src for the generated "home server shelf" photo if you prefer -->
+          <img src="https://picsum.photos/seed/home-server-shelf/700/440" width="700" height="440" loading="lazy"
+               alt="Freddie's small home server with tidy cables on a wooden shelf"
+               class="w-full h-52 object-cover">
+          <span class="absolute top-4 -left-2 bg-ink text-cream font-bold text-[15px] px-3 py-1 rounded-md rotate-[-2deg] shadow-md">ALWAYS-ON</span>
+        </div>
+        <div class="p-7">
+          <h3 class="font-display font-black text-2xl">🖥️ Home server administration</h3>
+          <p class="mt-3 text-lg leading-8">A small server at home that runs my backups, blocks ads for the whole house, and hosts family photos — maintained like a real production box, just cozier.</p>
+          <ul class="mt-5 space-y-3 text-[17px] leading-7 border-l-4 border-amber pl-5">
+            <li><span class="font-bold text-pine">Feb 2026</span> — automatic backups are now restore-tested once a month, on purpose.</li>
+            <li><span class="font-bold text-pine">Jan 2026</span> — moved the family photo archive to self-hosted storage.</li>
+            <li><span class="font-bold text-pine">Nov 2025</span> — the server moved to the hallway shelf; noise problem solved.</li>
+          </ul>
+          <p class="mt-6 flex flex-wrap gap-2">
+            <span class="bg-paper border border-ink/10 rounded-full px-4 py-1.5 text-[16px] font-bold">Docker</span>
+            <span class="bg-paper border border-ink/10 rounded-full px-4 py-1.5 text-[16px] font-bold">Pi-hole</span>
+            <span class="bg-paper border border-ink/10 rounded-full px-4 py-1.5 text-[16px] font-bold">Backups</span>
+            <span class="bg-paper border border-ink/10 rounded-full px-4 py-1.5 text-[16px] font-bold">Monitoring</span>
+          </p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ SKILLS -->
+<section id="skills" aria-labelledby="skills-title" class="bg-sage py-28">
+  <div class="max-w-content mx-auto px-5 sm:px-8">
+    <p class="reveal font-bold uppercase tracking-[.18em] text-pine text-[16px]">05 · Skills</p>
+    <h2 id="skills-title" class="reveal mt-3 font-display font-black text-4xl sm:text-5xl">What I work with.</h2>
+
+    <div class="mt-14 grid lg:grid-cols-[1fr_1.1fr] gap-14 items-start">
+      <div class="reveal">
+        <h3 class="font-display font-bold text-2xl">Where my time goes, by language</h3>
+        <div class="mt-7 space-y-6">
+          <div>
+            <div class="flex justify-between font-bold text-lg"><span>PHP</span><span>35%</span></div>
+            <div class="mt-2 h-4 bg-ink/10 rounded-full overflow-hidden"><div class="skill-fill h-full bg-pine rounded-full" data-val="35"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between font-bold text-lg"><span>JavaScript</span><span>25%</span></div>
+            <div class="mt-2 h-4 bg-ink/10 rounded-full overflow-hidden"><div class="skill-fill h-full bg-pine rounded-full" data-val="25"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between font-bold text-lg"><span>TypeScript</span><span>15%</span></div>
+            <div class="mt-2 h-4 bg-ink/10 rounded-full overflow-hidden"><div class="skill-fill h-full bg-pine rounded-full" data-val="15"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between font-bold text-lg"><span>HTML &amp; CSS</span><span>15%</span></div>
+            <div class="mt-2 h-4 bg-ink/10 rounded-full overflow-hidden"><div class="skill-fill h-full bg-pine rounded-full" data-val="15"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between font-bold text-lg"><span>Python</span><span>10%</span></div>
+            <div class="mt-2 h-4 bg-ink/10 rounded-full overflow-hidden"><div class="skill-fill h-full bg-pine rounded-full" data-val="10"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal d1 space-y-9">
+        <div>
+          <h3 class="font-display font-bold text-2xl">Front-end</h3>
+          <p class="mt-4 flex flex-wrap gap-2">
+            <span class="bg-paper border border-ink/10 rounded-full px-4 py-2 text-[17px] font-bold">React.js</span>
+            <span class="bg-paper border border-ink/10 rounded-full px-4 py-2 text-[17px] font-bold">Next.js</span>
+            <span class="bg-paper border border-ink/10 rounded-full px-4 py-2 text-[17px] font-bold">Tailwind CSS</span>
+            <span class="bg-paper border border-ink/10 rounded-full px-4 py-2 text-[17px] font-bold">HTML5</span>
+            <span class="bg-paper border border-ink/10 rounded-full px-4 py-2 text-[17px] font-bold">CSS3</span>
+            <span class="bg-paper border border-ink/10 rounded-full px-4 py-2 text-[17px] font-bold">Bootstrap</span>
+            <span class="bg-paper border border-ink/10 rounded-full px-4 py-2 text-[17px] font-bold">AJAX</span>
+          </p>
+        </div>
+        <div>
+          <h3 class="font-display font-bold text-2xl">Back-end</h3>
+          <p class="mt-4 flex flex-wrap gap-2">
+            <span class="bg-paper border border-ink/10 rounded-full px-4 py-2 text-[17px] font-bold">PHP / Laravel</span>
+            <span class="bg-paper border border-ink/10 rounded-full px-4 py-2 text-[17px] font-bold">Node.js</span>
+            <span class="bg-paper border border-ink/10 rounded-full px-4 py-2 text-[17px] font-bold">Python</span>
+            <span class="bg-paper border border-ink/10 rounded-full px-4 py-2 text-[17px] font-bold">MySQL</span>
+            <span class="bg-paper border border-ink/10 rounded-full px-4 py-2 text-[17px] font-bold">jQuery</span>
+            <span class="bg-paper border border-ink/10 rounded-full px-4 py-2 text-[17px] font-bold">REST APIs</span>
+          </p>
+        </div>
+        <div>
+          <h3 class="font-display font-bold text-2xl">Tools &amp; practice</h3>
+          <p class="mt-4 flex flex-wrap gap-2">
+            <span class="bg-amber/25 border border-ink/10 rounded-full px-4 py-2 text-[17px] font-bold">AI-assisted development</span>
+            <span class="bg-amber/25 border border-ink/10 rounded-full px-4 py-2 text-[17px] font-bold">AI image &amp; video</span>
+            <span class="bg-amber/25 border border-ink/10 rounded-full px-4 py-2 text-[17px] font-bold">Shopify themes</span>
+            <span class="bg-amber/25 border border-ink/10 rounded-full px-4 py-2 text-[17px] font-bold">Home server admin</span>
+            <span class="bg-paper border border-ink/10 rounded-full px-4 py-2 text-[17px] font-bold">Software testing</span>
+            <span class="bg-paper border border-ink/10 rounded-full px-4 py-2 text-[17px] font-bold">Git</span>
+            <span class="bg-paper border border-ink/10 rounded-full px-4 py-2 text-[17px] font-bold">Docker</span>
+            <span class="bg-paper border border-ink/10 rounded-full px-4 py-2 text-[17px] font-bold">Postman</span>
+            <span class="bg-paper border border-ink/10 rounded-full px-4 py-2 text-[17px] font-bold">VS Code</span>
+            <span class="bg-paper border border-ink/10 rounded-full px-4 py-2 text-[17px] font-bold">Server administration</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ OFF-SCREEN / GALLERY -->
+<section id="gallery" aria-labelledby="gallery-title" class="bg-cream py-24">
+  <div class="max-w-content mx-auto px-5 sm:px-8">
+    <p class="reveal font-bold uppercase tracking-[.18em] text-pine text-[16px]">06 · Off-screen</p>
+    <h2 id="gallery-title" class="reveal mt-3 font-display font-black text-4xl sm:text-5xl">Life away from the keyboard.</h2>
+
+    <div class="reveal d1 mt-8 flex flex-wrap gap-3" role="group" aria-label="Filter gallery">
+      <button class="filter-btn is-active min-h-[48px] px-6 rounded-full border-2 border-pine font-bold text-lg bg-pine text-cream" data-filter="all" aria-pressed="true">All</button>
+      <button class="filter-btn min-h-[48px] px-6 rounded-full border-2 border-pine font-bold text-lg text-pine hover:bg-pine/10" data-filter="hobby" aria-pressed="false">Hobbies</button>
+      <button class="filter-btn min-h-[48px] px-6 rounded-full border-2 border-pine font-bold text-lg text-pine hover:bg-pine/10" data-filter="skill" aria-pressed="false">Other skills</button>
+    </div>
+
+    <div id="galleryGrid" class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <figure class="gallery-item reveal sm:col-span-2 lg:row-span-2" data-cat="hobby">
+        <img src="https://picsum.photos/seed/hobby-guitar/900/700" width="900" height="700" loading="lazy" alt="A guitar resting against a chair in warm evening light" class="w-full h-full object-cover rounded-lg border-[5px] border-paper shadow-lg">
+        <figcaption class="mt-3"><span class="font-bold text-lg block">Guitar nights</span><span class="font-hand text-2xl text-pine">slow songs, slow code reviews</span></figcaption>
+      </figure>
+      <figure class="gallery-item reveal d1" data-cat="hobby">
+        <img src="https://picsum.photos/seed/hobby-hiking/500/500" width="500" height="500" loading="lazy" alt="A forest trail in the Sierra Madre mountains" class="w-full h-auto object-cover rounded-lg border-[5px] border-paper shadow-lg rotate-[.7deg]">
+        <figcaption class="mt-3"><span class="font-bold text-lg block">Sierra Madre trails</span><span class="font-hand text-2xl text-pine">debugging by walking</span></figcaption>
+      </figure>
+      <figure class="gallery-item reveal d1" data-cat="hobby">
+        <img src="https://picsum.photos/seed/hobby-film/500/500" width="500" height="500" loading="lazy" alt="A film camera on a wooden table" class="w-full h-auto object-cover rounded-lg border-[5px] border-paper shadow-lg">
+        <figcaption class="mt-3"><span class="font-bold text-lg block">Film photography</span><span class="font-hand text-2xl text-pine">36 frames of patience</span></figcaption>
+      </figure>
+      <figure class="gallery-item reveal d2" data-cat="hobby">
+        <img src="https://picsum.photos/seed/hobby-coffee/500/500" width="500" height="500" loading="lazy" alt="Pour-over coffee being brewed" class="w-full h-auto object-cover rounded-lg border-[5px] border-paper shadow-lg">
+        <figcaption class="mt-3"><span class="font-bold text-lg block">Pour-over coffee</span><span class="font-hand text-2xl text-pine">ratio-tested, like everything</span></figcaption>
+      </figure>
+      <figure class="gallery-item reveal d1" data-cat="skill">
+        <img src="https://picsum.photos/seed/skill-writing/500/500" width="500" height="500" loading="lazy" alt="A notebook with handwritten technical notes" class="w-full h-auto object-cover rounded-lg border-[5px] border-paper shadow-lg rotate-[-.7deg]">
+        <figcaption class="mt-3"><span class="font-bold text-lg block">Technical writing</span><span class="font-hand text-2xl text-pine">docs people actually read</span></figcaption>
+      </figure>
+      <figure class="gallery-item reveal d2" data-cat="skill">
+        <img src="https://picsum.photos/seed/skill-mentoring/500/500" width="500" height="500" loading="lazy" alt="Two people reviewing code together on one laptop" class="w-full h-auto object-cover rounded-lg border-[5px] border-paper shadow-lg">
+        <figcaption class="mt-3"><span class="font-bold text-lg block">Mentoring juniors</span><span class="font-hand text-2xl text-pine">code review as teaching</span></figcaption>
+      </figure>
+      <figure class="gallery-item reveal d2" data-cat="skill">
+        <img src="https://picsum.photos/seed/skill-servers/500/500" width="500" height="500" loading="lazy" alt="A quiet home server corner with soft lights" class="w-full h-auto object-cover rounded-lg border-[5px] border-paper shadow-lg">
+        <figcaption class="mt-3"><span class="font-bold text-lg block">Home server tinkering</span><span class="font-hand text-2xl text-pine">ssh, logs, calm nights</span></figcaption>
+      </figure>
+      <figure class="gallery-item reveal d2" data-cat="skill">
+        <img src="https://picsum.photos/seed/skill-video/500/500" width="500" height="500" loading="lazy" alt="A video editing timeline on a monitor" class="w-full h-auto object-cover rounded-lg border-[5px] border-paper shadow-lg rotate-[.5deg]">
+        <figcaption class="mt-3"><span class="font-bold text-lg block">Video editing</span><span class="font-hand text-2xl text-pine">cuts, pacing, AI takes</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ KIND WORDS -->
+<section aria-labelledby="words-title" class="bg-sand py-24 overflow-hidden">
+  <div class="max-w-content mx-auto px-5 sm:px-8">
+    <p class="reveal font-bold uppercase tracking-[.18em] text-pine text-[16px]">07 · Kind words</p>
+    <h2 id="words-title" class="reveal mt-3 font-display font-black text-4xl sm:text-5xl">What teammates say.</h2>
+    <p class="reveal d1 mt-3 text-lg font-bold text-ink-soft">References available on request.</p>
+
+    <div class="mt-14 grid md:grid-cols-3 gap-8 items-start">
+      <blockquote class="reveal relative bg-paper border-2 border-ink/10 rounded-md p-8 shadow-md rotate-[-1.5deg]">
+        <span aria-hidden="true" class="absolute -top-3 left-1/2 -translate-x-1/2 w-24 h-6 bg-amber-soft/80 rotate-[-3deg] shadow-sm"></span>
+        <p class="font-display italic text-[21px] leading-8">"Freddie treats your production like his own. He flagged bottlenecks we didn't know we had — then fixed them."</p>
+        <footer class="mt-5 font-bold text-[16px] uppercase tracking-wide text-pine">— Operations Manager, Palace Unity · Cyprus</footer>
+      </blockquote>
+      <blockquote class="reveal d1 relative bg-paper border-2 border-ink/10 rounded-md p-8 shadow-md rotate-[1deg] md:translate-y-6">
+        <span aria-hidden="true" class="absolute -top-3 left-1/2 -translate-x-1/2 w-24 h-6 bg-amber-soft/80 rotate-[2deg] shadow-sm"></span>
+        <p class="font-display italic text-[21px] leading-8">"Six years, zero drama. Endpoints stayed reliable through every integration we threw at him."</p>
+        <footer class="mt-5 font-bold text-[16px] uppercase tracking-wide text-pine">— CTO, PeachWiz Inc. · US</footer>
+      </blockquote>
+      <blockquote class="reveal d2 relative bg-paper border-2 border-ink/10 rounded-md p-8 shadow-md rotate-[-.5deg]">
+        <span aria-hidden="true" class="absolute -top-3 left-1/2 -translate-x-1/2 w-24 h-6 bg-amber-soft/80 rotate-[-1deg] shadow-sm"></span>
+        <p class="font-display italic text-[21px] leading-8">"Error-free releases became the norm after he joined our deployment pipeline."</p>
+        <footer class="mt-5 font-bold text-[16px] uppercase tracking-wide text-pine">— Team Lead, AcaciaSoft · Philippines</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ CONTACT -->
+<section id="contact" aria-labelledby="contact-title" class="relative bg-pine-deep text-cream overflow-hidden">
+  <img src="https://picsum.photos/seed/calm-evening-lights/1600/900" alt="" aria-hidden="true"
+       class="absolute inset-0 h-full w-full object-cover brightness-[.4]" loading="lazy">
+  <div class="absolute inset-0 bg-pine-deep/60" aria-hidden="true"></div>
+
+  <div class="relative max-w-content mx-auto px-5 sm:px-8 py-28">
+    <div class="grid lg:grid-cols-[1.05fr_.95fr] gap-14 items-start">
+      <div>
+        <p class="reveal font-bold uppercase tracking-[.18em] text-amber text-[16px]">08 · Contact</p>
+        <h2 id="contact-title" class="reveal mt-3 font-display font-black text-4xl sm:text-5xl">Let's talk.
+          <svg class="mt-1 w-44" viewBox="0 0 180 12" fill="none" aria-hidden="true">
+            <path d="M3 7 C 40 2, 90 11, 130 6 S 170 4, 177 7" stroke="#E9A13B" stroke-width="4" stroke-linecap="round"/>
+          </svg>
+        </h2>
+        <p class="reveal d1 mt-5 text-xl leading-8 max-w-xl">Have a role that needs a careful, steady developer? I usually reply within 24 hours. I'm based in Antipolo City and happy to work with US and Europe time zones.</p>
+
+        <ul class="reveal d1 mt-10 space-y-5 text-xl">
+          <li class="flex items-center gap-4 flex-wrap">
+            <span aria-hidden="true" class="text-2xl">✉️</span>
+            <a href="mailto:itsmefreddieunciano@gmail.com" class="font-bold underline decoration-2 underline-offset-4 hover:text-amber">itsmefreddieunciano@gmail.com</a>
+            <button id="copyEmail" class="min-h-[48px] px-5 rounded-lg border-2 border-cream/70 font-bold text-[16px] hover:bg-cream/10" aria-live="polite">Copy</button>
+          </li>
+          <li class="flex items-center gap-4">
+            <span aria-hidden="true" class="text-2xl">📞</span>
+            <a href="tel:+63286597922" class="font-bold hover:text-amber">(02) 8659-7922</a>
+          </li>
+          <li class="flex items-center gap-4">
+            <span aria-hidden="true" class="text-2xl">📍</span>
+            <span class="font-bold">Antipolo City 1870, Philippines</span>
+          </li>
+          <li class="flex items-center gap-4">
+            <span aria-hidden="true" class="text-2xl">📄</span>
+            <a href="#" class="font-bold underline decoration-2 underline-offset-4 hover:text-amber">Download my résumé (PDF)</a>
+          </li>
+        </ul>
+
+        <p class="reveal d2 mt-8 flex flex-wrap gap-x-8 gap-y-3 text-lg font-bold">
+          <a href="#" class="underline decoration-2 underline-offset-4 hover:text-amber">GitHub ↗</a>
+          <a href="#" class="underline decoration-2 underline-offset-4 hover:text-amber">LinkedIn ↗</a>
+          <a href="#" class="underline decoration-2 underline-offset-4 hover:text-amber">OnlineJobs ↗</a>
+        </p>
+
+        <h3 class="reveal mt-14 font-display font-bold text-2xl">Working together — common questions</h3>
+        <div class="reveal d1 mt-5 divide-y-2 divide-cream/20 border-y-2 border-cream/20">
+          <div>
+            <button class="faq-q w-full flex items-center justify-between gap-4 py-5 text-left font-bold text-lg hover:text-amber" aria-expanded="true">
+              Are you open to international remote roles?
+              <span class="faq-icon text-amber text-2xl" aria-hidden="true">–</span>
+            </button>
+            <div class="faq-a pb-5 text-lg leading-8 text-cream/95">Yes — more than six years working remotely with US and Europe teams. I'm comfortable working across time zones, with or without overlapping hours.</div>
+          </div>
+          <div>
+            <button class="faq-q w-full flex items-center justify-between gap-4 py-5 text-left font-bold text-lg hover:text-amber" aria-expanded="false">
+              Can you join an existing codebase?
+              <span class="faq-icon text-amber text-2xl" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a pb-5 text-lg leading-8 text-cream/95 hidden">That's most of my career: reading carefully, testing, and making things stable before adding anything new.</div>
+          </div>
+          <div>
+            <button class="faq-q w-full flex items-center justify-between gap-4 py-5 text-left font-bold text-lg hover:text-amber" aria-expanded="false">
+              Do you provide references?
+              <span class="faq-icon text-amber text-2xl" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a pb-5 text-lg leading-8 text-cream/95 hidden">Gladly — I can connect you with past managers from all three companies.</div>
+          </div>
+          <div>
+            <button class="faq-q w-full flex items-center justify-between gap-4 py-5 text-left font-bold text-lg hover:text-amber" aria-expanded="false">
+              What are your working hours?
+              <span class="faq-icon text-amber text-2xl" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a pb-5 text-lg leading-8 text-cream/95 hidden">I'm based near Manila (GMT+8) and I happily overlap with US mornings and European afternoons. I've worked this way since 2019.</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="formCard" class="reveal d1 bg-paper text-ink rounded-lg p-8 sm:p-10 shadow-2xl rotate-[-.4deg]">
+        <h3 class="font-display font-black text-3xl">Send me a message</h3>
+        <p class="mt-2 text-lg text-ink-soft">A direct line — no middleman. I read everything myself.</p>
+
+        <form id="contactForm" class="mt-7 space-y-5" novalidate>
+          <div>
+            <label for="fName" class="block font-bold text-lg">Your name</label>
+            <input type="text" id="fName" name="name" autocomplete="name"
+                   class="mt-2 w-full min-h-[52px] rounded-lg border-2 border-ink/25 bg-cream px-4 text-lg focus:border-pine" aria-describedby="err-fName">
+            <p id="err-fName" class="field-err mt-2 font-bold text-brick" role="alert"></p>
+          </div>
+          <div>
+            <label for="fEmail" class="block font-bold text-lg">Your email</label>
+            <input type="email" id="fEmail" name="email" autocomplete="email"
+                   class="mt-2 w-full min-h-[52px] rounded-lg border-2 border-ink/25 bg-cream px-4 text-lg focus:border-pine" aria-describedby="err-fEmail">
+            <p id="err-fEmail" class="field-err mt-2 font-bold text-brick" role="alert"></p>
+          </div>
+          <div>
+            <label for="fMsg" class="block font-bold text-lg">Your message</label>
+            <textarea id="fMsg" name="message" rows="5"
+                      class="mt-2 w-full rounded-lg border-2 border-ink/25 bg-cream px-4 py-3 text-lg focus:border-pine" aria-describedby="err-fMsg"></textarea>
+            <p id="err-fMsg" class="field-err mt-2 font-bold text-brick" role="alert"></p>
+          </div>
+          <button type="submit" class="w-full inline-flex items-center justify-center min-h-[56px] rounded-lg bg-pine text-cream font-bold text-xl hover:bg-pine-dark">Send Message</button>
+          <p class="text-[16px] text-ink-soft">Or email me directly at <a href="mailto:itsmefreddieunciano@gmail.com" class="font-bold text-pine underline decoration-2 underline-offset-4">itsmefreddieunciano@gmail.com</a></p>
+        </form>
+
+        <div id="formSuccess" class="hidden mt-7 bg-sage border-2 border-pine rounded-lg p-8 text-center" tabindex="-1" aria-live="polite">
+          <p class="text-4xl" aria-hidden="true">🌿</p>
+          <p class="mt-3 font-display font-black text-2xl">Message sent — thank you!</p>
+          <p class="mt-2 text-lg">I'll get back to you within 24 hours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============================================================ FOOTER -->
+<footer class="bg-pine-night text-cream/90 py-12">
+  <div class="max-w-content mx-auto px-5 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+    <p class="text-lg">© 2026 Freddie Unciano Jr · Antipolo City, Philippines · <span class="ph-clock">--:--</span></p>
+    <nav aria-label="Footer" class="flex flex-wrap justify-center gap-x-6 gap-y-2 font-bold text-[16px]">
+      <a href="#about" class="hover:text-amber">About</a>
+      <a href="#experience" class="hover:text-amber">Experience</a>
+      <a href="#projects" class="hover:text-amber">Projects</a>
+      <a href="#skills" class="hover:text-amber">Skills</a>
+      <a href="#contact" class="hover:text-amber">Contact</a>
+    </nav>
+    <p class="font-hand text-2xl text-amber-soft">hand-built with Tailwind — no template harmed</p>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="Back to top"
+        class="fixed bottom-6 right-6 z-40 w-[52px] h-[52px] rounded-full bg-amber text-ink text-2xl font-black shadow-lg hover:bg-amber-soft">↑</button>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+$(function () {
+  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function updateClock() {
+    try {
+      var t = new Intl.DateTimeFormat('en-US', {
+        timeZone: 'Asia/Manila', hour: '2-digit', minute: '2-digit', hour12: true
+      }).format(new Date());
+      $('.ph-clock').text(t.toUpperCase() + ' PH');
+    } catch (e) { $('.ph-clock').text('--:-- PH'); }
+  }
+  updateClock();
+  setInterval(updateClock, 30000);
+
+  var reveals = document.querySelectorAll('.reveal');
+  if (reducedMotion || !('IntersectionObserver' in window)) {
+    $('.reveal').addClass('revealed');
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(function (el) { io.observe(el); });
+  }
+
+  function fillBars() {
+    $('.skill-fill').each(function () { $(this).css('width', $(this).data('val') + '%'); });
+  }
+  var skillsSection = document.getElementById('skills');
+  if (reducedMotion || !('IntersectionObserver' in window) || !skillsSection) {
+    fillBars();
+  } else {
+    var sio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { fillBars(); sio.disconnect(); }
+      });
+    }, { threshold: 0.3 });
+    sio.observe(skillsSection);
+  }
+
+  $('a[href^="#"]').on('click', function (e) {
+    var id = $(this).attr('href');
+    if (id.length > 1 && $(id).length) {
+      e.preventDefault();
+      var top = $(id).offset().top - 84;
+      if (reducedMotion) { window.scrollTo(0, top); }
+      else { $('html, body').animate({ scrollTop: top }, 450, 'swing'); }
+      if ($('#mobileMenu').is(':visible')) {
+        $('#mobileMenu').slideUp(reducedMotion ? 0 : 160);
+        $('#menuBtn').attr('aria-expanded', 'false');
+        $('#menuIcon').text('☰');
+      }
+    }
+  });
+
+  $('#menuBtn').on('click', function () {
+    var open = $(this).attr('aria-expanded') === 'true';
+    $(this).attr('aria-expanded', String(!open));
+    $('#menuIcon').text(open ? '☰' : '✕');
+    $('#mobileMenu').slideToggle(reducedMotion ? 0 : 180);
+  });
+  $(window).on('resize', function () {
+    if (window.innerWidth >= 1024) {
+      $('#mobileMenu').removeAttr('style');
+      $('#menuBtn').attr('aria-expanded', 'false');
+      $('#menuIcon').text('☰');
+    }
+  });
+
+  $('.faq-a').not(':first').hide();
+  $('.faq-q').on('click', function () {
+    var $btn = $(this), $panel = $btn.next('.faq-a');
+    var willOpen = $btn.attr('aria-expanded') !== 'true';
+    $('.faq-q').not($btn).attr('aria-expanded', 'false');
+    $('.faq-q .faq-icon').not($btn.find('.faq-icon')).text('+');
+    $('.faq-a').not($panel).slideUp(reducedMotion ? 0 : 180);
+    $btn.attr('aria-expanded', String(willOpen));
+    $btn.find('.faq-icon').text(willOpen ? '–' : '+');
+    $panel.slideToggle(reducedMotion ? 0 : 180);
+  });
+
+  $('.filter-btn').on('click', function () {
+    $('.filter-btn').removeClass('is-active bg-pine text-cream').addClass('text-pine').attr('aria-pressed', 'false');
+    $(this).addClass('is-active bg-pine text-cream').removeClass('text-pine').attr('aria-pressed', 'true');
+    var cat = $(this).data('filter');
+    $('.gallery-item').each(function () {
+      var show = (cat === 'all') || ($(this).data('cat') === cat);
+      $(this).toggleClass('hidden', !show);
+    });
+  });
+
+  var EMAIL = 'itsmefreddieunciano@gmail.com';
+  $('#copyEmail').on('click', function () {
+    var $b = $(this);
+    function done() { $b.text('Copied ✓'); setTimeout(function () { $b.text('Copy'); }, 2200); }
+    function fallback() {
+      var $t = $('<input type="text">').val(EMAIL).appendTo('body');
+      $t[0].select();
+      try { document.execCommand('copy'); done(); } catch (e) {}
+      $t.remove();
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(EMAIL).then(done, fallback);
+    } else { fallback(); }
+  });
+
+  function setErr(id, msg) { $('#err-' + id).text(msg); $('#' + id).toggleClass('border-brick', !!msg); }
+  $('#contactForm').on('submit', function (e) {
+    e.preventDefault();
+    var name = $.trim($('#fName').val());
+    var email = $.trim($('#fEmail').val());
+    var msg = $.trim($('#fMsg').val());
+    setErr('fName', name.length >= 2 ? '' : 'Please tell me your name.');
+    setErr('fEmail', /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ? '' : 'Please enter a valid email address.');
+    setErr('fMsg', msg.length >= 10 ? '' : 'Please write a short message — at least 10 characters.');
+    var firstErr = $('.field-err').filter(function () { return $(this).text() !== ''; }).first();
+    if (firstErr.length) { $('#' + firstErr.attr('id').replace('err-', '')).trigger('focus'); return; }
+    $('#contactForm').slideUp(reducedMotion ? 0 : 200);
+    $('#formSuccess').removeClass('hidden').trigger('focus');
+  });
+  $('#fName, #fEmail, #fMsg').on('input', function () { setErr(this.id, ''); });
+
+  $(window).on('scroll', function () {
+    var y = $(window).scrollTop();
+    $('#siteHeader').toggleClass('scrolled', y > 8);
+    $('#toTop').toggleClass('show', y > 600);
+  });
+  $('#toTop').on('click', function () {
+    if (reducedMotion) { window.scrollTo(0, 0); }
+    else { $('html, body').animate({ scrollTop: 0 }, 500, 'swing'); }
+  });
+});
+</script>
+</body>
+</html>
