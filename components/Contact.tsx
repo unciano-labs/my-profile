@@ -58,8 +58,12 @@ export default function Contact() {
     setErrors((prev) => ({ ...prev, [field]: undefined }));
   }
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    setSubmitError("");
     const next: typeof errors = {};
     if (name.trim().length < 2) next.name = "Please tell me your name.";
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim()))
@@ -72,7 +76,34 @@ export default function Contact() {
       document.getElementById(FIELD_IDS[first])?.focus();
       return;
     }
-    setSent(true);
+
+    setIsSubmitting(true);
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "bee266ff-d360-4d00-94e8-675157853957",
+          name: name.trim(),
+          email: email.trim(),
+          message: message.trim(),
+          subject: `New Portfolio Message from ${name.trim()}`,
+        }),
+      });
+      const result = await response.json();
+      if (result.success) {
+        setSent(true);
+      } else {
+        setSubmitError(result.message || "Something went wrong. Please try again.");
+      }
+    } catch (err) {
+      setSubmitError("Network error. Please check your connection and try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -361,10 +392,16 @@ export default function Contact() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full inline-flex items-center justify-center min-h-[52px] rounded-lg bg-pine text-cream font-bold text-[19px] hover:bg-pine-dark"
+                  disabled={isSubmitting}
+                  className="w-full inline-flex items-center justify-center min-h-[52px] rounded-lg bg-pine text-cream font-bold text-[19px] hover:bg-pine-dark disabled:opacity-70 disabled:cursor-not-allowed transition-colors"
                 >
-                  Send Message
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </button>
+                {submitError && (
+                  <p className="mt-2 text-center font-bold text-brick text-sm" role="alert">
+                    {submitError}
+                  </p>
+                )}
               </form>
             )}
           </Reveal>
