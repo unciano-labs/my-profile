@@ -270,7 +270,7 @@ export const PROJECTS: Project[] = [
     ctaSecondary: { label: "password: chaymo ↗", href: "#" },
   },
   {
-    meta: "Lab · 2026 · AI video",
+    meta: "Lab · 2026 · Unciano Lab",
     title: "Tenvi — Wealth Management SAAS",
     description:
       "A Financial app that tracks and manages investments, portfolios, and financial goals for users. tracks payables and receivables, and provides insights into financial health.",
