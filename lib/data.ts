@@ -180,19 +180,19 @@ export const PROJECTS: Project[] = [
     tags: ["Next.js", "TypeScript", "Tailwind","React","Supabase","QA testing","AI-assisted development"],
     images: [
       {
-        src: "https://uaumuuggwipzfhkssivc.supabase.co/storage/v1/object/public/my-profile/SCR-20260817-bvqd.png",
+        src: "https://xhjkkrjnlorrayuaxbra.supabase.co/storage/v1/object/public/profile-green/SCR-20260817-bvqd.png",
         alt: "property listing screen from the Ruvix property management suite",
       },
       {
-        src: "https://uaumuuggwipzfhkssivc.supabase.co/storage/v1/object/public/my-profile/dashboard.png",
+        src: "https://xhjkkrjnlorrayuaxbra.supabase.co/storage/v1/object/public/profile-green/dashbaord.png",
         alt: "Dashboard screen from the Ruvix property management suite",
       },
       {
-        src: "https://uaumuuggwipzfhkssivc.supabase.co/storage/v1/object/public/my-profile/booking.png",
+        src: "https://xhjkkrjnlorrayuaxbra.supabase.co/storage/v1/object/public/profile-green/booking.png",
         alt: "Booking screen from the Ruvix property management suite",
       },
       {
-        src: "https://uaumuuggwipzfhkssivc.supabase.co/storage/v1/object/public/my-profile/guest-messaging.png",
+        src: "https://xhjkkrjnlorrayuaxbra.supabase.co/storage/v1/object/public/profile-green/guest-messaging.png",
         alt: "Centralized Chat support screen from the Ruvix property management suite",
       },
     ],
@@ -210,25 +210,29 @@ export const PROJECTS: Project[] = [
       "99.9% monitoring uptime for 6 years",
       "Iterating on system functionality by regularly building, testing, and deploying scheduled feature updates.",
     ],
-    tags: ["Laravel", "MySQL", "jQuery","PHP","Server Administration"],
+    tags: ["Nextjs", "Supabase", "TailwindCss","SQL","Server Administration"],
     images: [
       {
-        src: "https://uaumuuggwipzfhkssivc.supabase.co/storage/v1/object/public/my-profile/SCR-20260817-esla.png",
+        src: "https://xhjkkrjnlorrayuaxbra.supabase.co/storage/v1/object/public/profile-green/SCR-20261027-eutb.png",
         alt: "Administration dashboard from the Youportal HOA management portal",
       },
       {
-        src: "https://uaumuuggwipzfhkssivc.supabase.co/storage/v1/object/public/my-profile/SCR-20260817-ezgt.png",
-        alt: "A Marketplace for service offered to HOA residents, from the Youportal HOA management portal",
+        src: "https://xhjkkrjnlorrayuaxbra.supabase.co/storage/v1/object/public/profile-green/SCR-20261027-eumk.png",
+        alt: "Landing page from the Youportal HOA management portal www.myhoa.site",
       },
       {
-        src: "https://uaumuuggwipzfhkssivc.supabase.co/storage/v1/object/public/my-profile/SCR-20260817-escj.png",
-        alt: "A website administration screen from the Youportal HOA management portal",
+        src: "https://xhjkkrjnlorrayuaxbra.supabase.co/storage/v1/object/public/profile-green/SCR-20261027-evfn.png",
+        alt: "Bookeeping and payment screen from the Youportal HOA management portal",
       },
+      {
+        src: "https://xhjkkrjnlorrayuaxbra.supabase.co/storage/v1/object/public/profile-green/SCR-20261027-evsv.png",
+        alt: "Voting Module of the Youportal HOA management portal",
+      }
     ],
     rotate: "rotate-[-.8deg]",
     imageSide: "right",
     textCard: true,
-    ctaPrimary: { label: "Private App", href: "#" },
+    ctaPrimary: { label: "Check Out the website", href: "https://myhoa.site/" },
     ctaSecondary: { label: "Code ↗", href: "#" },
   },
   {
@@ -244,19 +248,19 @@ export const PROJECTS: Project[] = [
     tags: ["Shopify", "Liquid", "Tailwind CSS","JavaScript",'API Integration',"AI-assisted development"],
     images: [
       {
-        src: "https://uaumuuggwipzfhkssivc.supabase.co/storage/v1/object/public/my-profile/SCR-20260817-fdau.png",
+        src: "https://xhjkkrjnlorrayuaxbra.supabase.co/storage/v1/object/public/profile-green/SCR-20260817-fdau.png",
         alt: "Ecommerce storefront theme for Kubaws, built with Liquid, Tailwind CSS, and JavaScript",
       },
       {
-        src: "https://uaumuuggwipzfhkssivc.supabase.co/storage/v1/object/public/my-profile/SCR-20260817-fdfn.png",
+        src: "https://xhjkkrjnlorrayuaxbra.supabase.co/storage/v1/object/public/profile-green/SCR-20260817-fdfn.png",
         alt: "Products page from the Kubaws ecommerce storefront theme, built with Liquid, Tailwind CSS, and JavaScript",
       },
       {
-        src: "https://uaumuuggwipzfhkssivc.supabase.co/storage/v1/object/public/my-profile/SCR-20260817-fdjw.png",
+        src: "https://xhjkkrjnlorrayuaxbra.supabase.co/storage/v1/object/public/profile-green/SCR-20260817-fdjw.png",
         alt: "Product detail page from the Kubaws ecommerce storefront theme, built with Liquid, Tailwind CSS, and JavaScript",
       },
       {
-        src: "https://uaumuuggwipzfhkssivc.supabase.co/storage/v1/object/public/my-profile/SCR-20260817-fdpw.png",
+        src: "https://xhjkkrjnlorrayuaxbra.supabase.co/storage/v1/object/public/profile-green/SCR-20260817-fdpw.png",
         alt: "Shopping cart page from the Kubaws ecommerce storefront theme, built with Liquid, Tailwind CSS, and JavaScript",
       },
     ],
@@ -267,31 +271,35 @@ export const PROJECTS: Project[] = [
   },
   {
     meta: "Lab · 2026 · AI video",
-    title: "FrameForge — AI video storyboard lab",
+    title: "Tenvi — Wealth Management SAAS",
     description:
-      "A small pipeline that turns product notes into five-second demo videos. A library of tested prompts keeps the characters and the style consistent between takes.",
+      "A Financial app that tracks and manages investments, portfolios, and financial goals for users. tracks payables and receivables, and provides insights into financial health.",
     bullets: [
-      "More than 40 tested prompt patterns, versioned like code",
-      "These short loops are now used in internal pitches",
+      "Uses notification and alerts to keep users informed about their financial status and upcoming deadlines",
+      "AI powered - upload receipts and AI will parse it for you, with tenvi assistant, you can ask questions about your finances and get insights and recommendations",
     ],
     tags: ["Text-to-video", "Image-to-video", "Prompt design"],
     images: [
       {
-        src: "https://picsum.photos/seed/frameforge-board/900/560",
-        alt: "Storyboard board from the FrameForge video lab",
+        src: "https://xhjkkrjnlorrayuaxbra.supabase.co/storage/v1/object/public/profile-green/SCR-20261027-fajq.png",
+        alt: "Credit card management screen from the Tenvi Wealth Management SAAS app",
       },
       {
-        src: "https://picsum.photos/seed/frameforge-takes/900/560",
-        alt: "Video takes library in FrameForge",
+        src: "https://xhjkkrjnlorrayuaxbra.supabase.co/storage/v1/object/public/profile-green/SCR-20261027-fark.png",
+        alt: "Savings and  Digital wallet screen from the Tenvi Wealth Management SAAS app",
       },
       {
-        src: "https://picsum.photos/seed/frameforge-prompts/900/560",
-        alt: "Prompt library in FrameForge",
+        src: "https://xhjkkrjnlorrayuaxbra.supabase.co/storage/v1/object/public/profile-green/SCR-20261027-fano.png",
+        alt: "Bill split page from the Tenvi Wealth Management SAAS app, can send notification to other users to pay their share",
+      },
+       {
+        src: "https://xhjkkrjnlorrayuaxbra.supabase.co/storage/v1/object/public/profile-green/SCR-20261027-facl.png",
+        alt: "Property management screen from the Tenvi Wealth Management SAAS app, can track payables and receivables",
       },
     ],
     rotate: "rotate-[-.6deg]",
     imageSide: "right",
-    ctaPrimary: { label: "Read Lab Notes ↓", href: "#lab" },
+    ctaPrimary: { label: "Try Tenvi now!", href: "https://tenvi.vercel.app/" },
     ctaSecondary: { label: "Clips ↗", href: "#" },
   },
 ];
