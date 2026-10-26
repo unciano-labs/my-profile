@@ -184,7 +184,7 @@ export const PROJECTS: Project[] = [
         alt: "property listing screen from the Ruvix property management suite",
       },
       {
-        src: "https://xhjkkrjnlorrayuaxbra.supabase.co/storage/v1/object/public/profile-green/dashbaord.png",
+        src: "https://xhjkkrjnlorrayuaxbra.supabase.co/storage/v1/object/public/profile-green/dashboard.png",
         alt: "Dashboard screen from the Ruvix property management suite",
       },
       {
