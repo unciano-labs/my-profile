@@ -4,7 +4,7 @@ import { FormEvent, useEffect, useRef, useState } from "react";
 import Reveal from "@/components/Reveal";
 import { FAQS } from "@/lib/data";
 
-const EMAIL = "itsmefreddieunciano@gmail.com";
+const EMAIL = "webcareer1@gmail.com";
 const FIELD_IDS: Record<string, string> = {
   name: "fName",
   email: "fEmail",
@@ -162,10 +162,10 @@ export default function Contact() {
                   ✉️
                 </span>
                 <a
-                  href="mailto:itsmefreddieunciano@gmail.com"
+                  href="mailto:webcareer1@gmail.com"
                   className="font-bold underline decoration-2 underline-offset-4 hover:text-amber"
                 >
-                  itsmefreddieunciano@gmail.com
+                  webcareer1@gmail.com
                 </a>
                 <button
                   id="copyEmail"

@@ -92,7 +92,7 @@ export default function Hero() {
             className="mt-9 flex flex-wrap items-center gap-4"
           >
             <a
-              href="mailto:itsmefreddieunciano@gmail.com"
+              href="mailto:webcareer1@gmail.com"
               className="inline-flex items-center justify-center min-h-[54px] px-8 rounded-lg bg-amber text-ink font-bold text-lg shadow-md hover:bg-amber-soft"
             >
               Email Me
